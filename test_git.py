@@ -33,7 +33,7 @@ def test_inputs():
 
     # ACTION
     FIRST_INPUT_act = driver.find_element(*FIRST_INPUT_locator)
-    FIRST_INPUT_act.send_keys("mymail@gmail.com")
+    FIRST_INPUT_act.send_keys("mymaertertretrtertertretil@gmail.com")
     print("INPUTS SUCCESS")
 
 

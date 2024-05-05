@@ -1,6 +1,7 @@
 name: test_git_action
 
 on:
+
   workflow_dispatch:
     inputs:
       deployment_target:

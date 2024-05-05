@@ -1,6 +1,16 @@
 name: test_git_action
 
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      deployment_target:
+        description: choose target
+        required: true
+        default:
+        type: choice
+        options:
+          - first_test
+          - second_test
 
 jobs:
   testing-one:
@@ -16,5 +26,9 @@ jobs:
         run: sudo apt-get install google-chrome-stable
       - name: install-dependences
         run: pip install -r requirements.txt
-      - name: Run Test
-        run: pytest
+      - name: first_test
+        if: "github.event.inputs.deployment_target == 'first_test'"
+        run: pytest test_git.py::test_inputs
+      - name: second_test
+        if: "github.event.inputs.deployment_target == 'second_test'"
+        run: pytest test_git.py::test_buttons

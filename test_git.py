@@ -35,3 +35,18 @@ def test_inputs():
     FIRST_INPUT_act = driver.find_element(*FIRST_INPUT_locator)
     FIRST_INPUT_act.send_keys("mymail@gmail.com")
     print("INPUTS SUCCESS")
+
+
+def test_buttons():
+    options = Options()
+    options.add_argument("--headless")
+    options.add_argument('start-maximized')
+    driver.get("https://www.qa-practice.com/elements/input/simple")
+
+    # VARIABLES
+    FIRST_INPUT_locator = ("xpath", '//input[@type = "text"]')
+
+    # ACTION
+    FIRST_INPUT_act = driver.find_element(*FIRST_INPUT_locator)
+    FIRST_INPUT_act.send_keys("NEmyMAIL@protonmail.ru")
+    print("INPUTS SUCCESS")

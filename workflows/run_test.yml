@@ -1,6 +1,7 @@
 name: test_git_action
 
-on: push
+on:
+  push
 
 jobs:
   testing-one:

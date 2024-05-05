@@ -1,0 +1,20 @@
+name: test_git_action
+
+on: push
+
+jobs:
+  testing-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout-repository
+        uses: actions/checkout@v3
+      - name: setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.2'
+      - name: install-chrome
+        run: sudo apt-get install google-chrome-stable
+      - name: install-dependences
+        run: pip install -r requirements.txt
+      - name: Run Test
+        run: pytest
